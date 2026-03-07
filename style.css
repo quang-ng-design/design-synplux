@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/background-jpg.jpg");  /* Dùng dấu ngoặc kép, tên file KHỚP CHÍNH XÁC */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* filter: brightness(0.65); */  /* Bỏ comment nếu muốn mờ nền */
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 90%;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.4em;
+  line-height: 0.9;
+}
+
+p {
+  font-size: clamp(1.3rem, 5vw, 2.2rem);
+  font-weight: 400;
+  opacity: 0.9;
+  margin: 0.6em 0;
+}
+
+.social-links {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.social-links a:hover {
+  opacity: 0.7;
+  transform: translateY(-4px);
+}
+
+/* Mobile friendly */
+@media (max-width: 640px) {
+  .social-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
