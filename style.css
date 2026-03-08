@@ -81,3 +81,49 @@ p {
     gap: 1.5rem;
   }
 }
+/* Link Behance - góc trái dưới */
+.social-behance,
+.social-behance a {
+  position: fixed;              /* Cố định vị trí so với màn hình */
+  bottom: 25px;                 /* Lề dưới 25px */
+  left: 25px;                   /* Lề trái 25px */
+  font-size: 18px;              /* Font size 18px */
+  font-weight: 500;             /* Độ đậm vừa phải */
+  color: white;                 /* Màu chữ trắng để nổi trên nền xanh */
+  text-decoration: none;        /* Bỏ gạch chân */
+  letter-spacing: 0.05em;       /* Khoảng cách chữ nhẹ */
+  z-index: 10;                  /* Đảm bảo nằm trên các phần khác */
+  transition: all 0.3s ease;    /* Hiệu ứng hover mượt */
+}
+
+.social-behance:hover,
+.social-behance a:hover {
+  color: #a5d8ff;               /* Màu xanh nhạt khi hover, phù hợp tông xanh dương */
+  transform: translateY(-3px);  /* Nâng nhẹ khi hover */
+}
+
+/* Link Instagram - góc phải dưới */
+.social-instagram,
+.social-instagram a {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;                  /* Lề phải 25px */
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.social-instagram:hover,
+.social-instagram a:hover {
+  color: #a5d8ff;
+  transform: translateY(-3px);
+}
+
+/* Nếu bạn dùng thẻ <a> trực tiếp trong .social-links, ẩn phần cũ nếu cần */
+.social-links {
+  display: none;  /* Ẩn container cũ nếu bạn tách riêng 2 link */
+}
