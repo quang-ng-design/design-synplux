@@ -85,8 +85,8 @@ p {
 .social-behance,
 .social-behance a {
   position: fixed;              /* Cố định vị trí so với màn hình */
-  bottom: 25px;                 /* Lề dưới 25px */
-  left: 25px;                   /* Lề trái 25px */
+  bottom: 30px;                 /* Lề dưới 25px */
+  left: 30px;                   /* Lề trái 25px */
   font-size: 18px;              /* Font size 18px */
   font-weight: 500;             /* Độ đậm vừa phải */
   color: white;                 /* Màu chữ trắng để nổi trên nền xanh */
@@ -106,8 +106,8 @@ p {
 .social-instagram,
 .social-instagram a {
   position: fixed;
-  bottom: 25px;
-  right: 25px;                  /* Lề phải 25px */
+  bottom: 30px;
+  right: 30px;                  /* Lề phải 25px */
   font-size: 18px;
   font-weight: 500;
   color: white;
