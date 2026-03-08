@@ -127,3 +127,44 @@ p {
 .social-links {
   display: none;  /* Ẩn container cũ nếu bạn tách riêng 2 link */
 }
+/* Đảm bảo links fixed ở góc dưới, tránh bị che bởi bottom bar mobile */
+.social-behance,
+.social-instagram {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 25px);  /* Tự động + safe area bottom (iOS) */
+  z-index: 9999;                               /* Tăng z-index cao nhất để không bị che */
+  pointer-events: auto;                        /* Buộc cho phép tap/click */
+  touch-action: manipulation;                  /* Tối ưu touch trên mobile, tránh delay */
+}
+
+/* Link Behance trái dưới */
+.social-behance {
+  left: 25px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Link Instagram phải dưới */
+.social-instagram {
+  right: 25px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hover/tap effect mượt hơn trên mobile */
+.social-behance:hover,
+.social-behance:focus,
+.social-instagram:hover,
+.social-instagram:focus {
+  color: #a5d8ff;  /* Màu xanh nhạt nổi bật trên nền xanh dương */
+  transform: translateY(-3px);
+}
+
+/* Padding bottom cho body để tránh nội dung chính bị che bởi links fixed */
+body {
+  padding-bottom: calc(50px + env(safe-area-inset-bottom, 0));  /* Dự phòng cho mobile */
+}
