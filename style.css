@@ -23,7 +23,7 @@ body, html {
 .bg {
   position: absolute;
   inset: 0;
-  background-image: url("assets/background-jpg.jpg");  /* Dùng dấu ngoặc kép, tên file KHỚP CHÍNH XÁC */
+  background-image: url("assets/cover-demo.jpg");  /* Dùng dấu ngoặc kép, tên file KHỚP CHÍNH XÁC */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
