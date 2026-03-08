@@ -98,7 +98,7 @@ p {
 
 .social-behance:hover,
 .social-behance a:hover {
-  color: #a5d8ff;               /* Màu xanh nhạt khi hover, phù hợp tông xanh dương */
+  color: #ffffff;               /* Màu xanh nhạt khi hover, phù hợp tông xanh dương */
   transform: translateY(-3px);  /* Nâng nhẹ khi hover */
 }
 
