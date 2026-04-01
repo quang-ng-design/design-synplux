@@ -56,7 +56,7 @@ p {
 /* Social Links - góc dưới */
 .social-links {
   position: fixed;
-  bottom: 70px;
+  bottom: 66px;
   left: 50px;
   right: 50px;
   display: flex;
