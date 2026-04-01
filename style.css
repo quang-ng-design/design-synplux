@@ -7,17 +7,15 @@
 body, html {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: white;
+  overflow: hidden;
 }
 
+/* Hero + Background */
 .hero {
   position: relative;
+  width: 100%;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
 }
 
 .bg {
@@ -27,144 +25,75 @@ body, html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* filter: brightness(0.65); */  /* Bỏ comment nếu muốn mờ nền */
+  z-index: 1;
 }
 
+/* Nội dung giữa màn hình */
 .content {
   position: relative;
   z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 20px;
-  max-width: 90%;
 }
 
 h1 {
   font-size: clamp(3.5rem, 10vw, 9rem);
   font-weight: 800;
   letter-spacing: -0.05em;
-  margin-bottom: 0.4em;
-  line-height: 0.9;
+  margin-bottom: 0.5em;
 }
 
 p {
-  font-size: clamp(1.3rem, 5vw, 2.2rem);
-  font-weight: 400;
+  font-size: clamp(1.3rem, 5vw, 2rem);
   opacity: 0.9;
-  margin: 0.6em 0;
 }
 
+/* Social Links - góc dưới */
 .social-links {
-  margin-top: 2.5rem;
+  position: fixed;
+  bottom: 70px;
+  left: 50px;
+  right: 50px;
   display: flex;
-  justify-content: center;
-  gap: 3rem;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .social-links a {
-  color: white;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  text-decoration: none;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  opacity: 0.7;
-  transform: translateY(-4px);
+  color: #a5d8ff;
+  transform: translateY(-3px);
 }
 
 /* Mobile friendly */
 @media (max-width: 640px) {
   .social-links {
-    flex-direction: column;
-    gap: 1.5rem;
+    bottom: 50px;
+    left: 25px;
+    right: 25px;
+  }
+  
+  .social-links a {
+    font-size: 13px;
   }
 }
-/* Link Behance - góc trái dưới */
-.social-behance,
-.social-behance a {
-  position: fixed;              /* Cố định vị trí so với màn hình */
-  bottom: 30px;                 /* Lề dưới 25px */
-  left: 30px;                   /* Lề trái 25px */
-  font-size: 18px;              /* Font size 18px */
-  font-weight: 500;             /* Độ đậm vừa phải */
-  color: white;                 /* Màu chữ trắng để nổi trên nền xanh */
-  text-decoration: none;        /* Bỏ gạch chân */
-  letter-spacing: 0.05em;       /* Khoảng cách chữ nhẹ */
-  z-index: 10;                  /* Đảm bảo nằm trên các phần khác */
-  transition: all 0.3s ease;    /* Hiệu ứng hover mượt */
-}
 
-.social-behance:hover,
-.social-behance a:hover {
-  color: #ffffff;               /* Màu xanh nhạt khi hover, phù hợp tông xanh dương */
-  transform: translateY(-3px);  /* Nâng nhẹ khi hover */
-}
-
-/* Link Instagram - góc phải dưới */
-.social-instagram,
-.social-instagram a {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;                  /* Lề phải 25px */
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.social-instagram:hover,
-.social-instagram a:hover {
-  color: #a5d8ff;
-  transform: translateY(-3px);
-}
-
-/* Nếu bạn dùng thẻ <a> trực tiếp trong .social-links, ẩn phần cũ nếu cần */
-.social-links {
-  display: none;  /* Ẩn container cũ nếu bạn tách riêng 2 link */
-}
-/* Đảm bảo links fixed ở góc dưới, tránh bị che bởi bottom bar mobile */
-.social-behance,
-.social-instagram {
-  position: fixed;
-  bottom: env(safe-area-inset-bottom, 25px);  /* Tự động + safe area bottom (iOS) */
-  z-index: 9999;                               /* Tăng z-index cao nhất để không bị che */
-  pointer-events: auto;                        /* Buộc cho phép tap/click */
-  touch-action: manipulation;                  /* Tối ưu touch trên mobile, tránh delay */
-}
-
-/* Link Behance trái dưới */
-.social-behance {
-  left: 25px;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Link Instagram phải dưới */
-.social-instagram {
-  right: 25px;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Hover/tap effect mượt hơn trên mobile */
-.social-behance:hover,
-.social-behance:focus,
-.social-instagram:hover,
-.social-instagram:focus {
-  color: #a5d8ff;  /* Màu xanh nhạt nổi bật trên nền xanh dương */
-  transform: translateY(-3px);
-}
-
-/* Padding bottom cho body để tránh nội dung chính bị che bởi links fixed */
+/* Dự phòng padding cho mobile */
 body {
-  padding-bottom: calc(50px + env(safe-area-inset-bottom, 0));  /* Dự phòng cho mobile */
+  padding-bottom: 120px;
 }
