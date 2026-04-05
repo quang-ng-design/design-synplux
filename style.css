@@ -7,8 +7,8 @@
 body, html {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: white;
   overflow: hidden;
+  color: white;
 }
 
 /* Hero + Background */
@@ -26,37 +26,14 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-}
-
-/* Nội dung giữa màn hình */
-.content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-h1 {
-  font-size: clamp(3.5rem, 10vw, 9rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  margin-bottom: 0.5em;
-}
-
-p {
-  font-size: clamp(1.3rem, 5vw, 2rem);
-  opacity: 0.9;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
 }
 
 /* Social Links - góc dưới */
 .social-links {
   position: fixed;
-  bottom: 66px;
+  bottom: 70px;
   left: 50px;
   right: 50px;
   display: flex;
@@ -83,17 +60,16 @@ p {
 /* Mobile friendly */
 @media (max-width: 640px) {
   .social-links {
-    bottom: 50px;
+    bottom: 66px;
     left: 25px;
     right: 25px;
   }
-  
   .social-links a {
     font-size: 13px;
   }
 }
 
-/* Dự phòng padding cho mobile */
+/* Padding bottom cho mobile */
 body {
-  padding-bottom: 120px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0));
 }
